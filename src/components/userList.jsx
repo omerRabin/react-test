@@ -1,6 +1,8 @@
 import React from 'react';
 
-const UserList = ({ users }) => {
+const UserList = ({ users = [] }) => {
+  if (!users.length) return <p>No posts available.</p>;
+
   return (
     <ul>
       {users.map((user) => (
