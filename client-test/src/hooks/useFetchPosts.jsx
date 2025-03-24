@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useFetchPosts = (userId) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
@@ -11,7 +11,7 @@ const useFetchPosts = (userId) => {
       })
       .then(setData)
       .catch(console.error);
-  }, [userId]);
+  }, []);
 
   return data;
 };

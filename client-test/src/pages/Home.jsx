@@ -4,7 +4,7 @@ import useFetchPosts from '../hooks/useFetchPosts';
 import UserList from '../components/userList';
 
 const Home = () => {
-  const [name, setName] = useState(''); // Initialized state to avoid uncontrolled warning
+  const [name, setName] = useState();
   const [userId, setUserId] = useState(1);
   const data = useFetchPosts(userId);
 
