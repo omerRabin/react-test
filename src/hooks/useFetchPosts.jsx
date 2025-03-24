@@ -5,12 +5,8 @@ const useFetchPosts = (userId) => {
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
-      .then((res) => {
-        if (!res.ok) throw new Error('שגיאה בעת שליפת הנתונים');
-        return res.json();
-      })
-      .then(setData)
-      .catch(console.error);
+      .then((res) => res.json())
+      .then(setData);
   }, []);
 
   return data;
